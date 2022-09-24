@@ -1,38 +1,215 @@
-.App {
+:root {
+  --body-grey: rgb(215, 219, 233);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+}
+button {
+  cursor: pointer;
+}
+
+.app {
+width: 100%;
+}
+.app .home {
+  width: 100%;
+}
+.app .home .todo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1em;
+  width: 100%;
+  gap: 1em;
+  /* height: 100vh; */
+}
+.app .home .todo .input {
+  display: flex;
+  width: 20%;
+  min-width: 200px;
+  align-items: center;
+  background: var(--body-grey);
+  border-radius: 0.2em;
+  position: relative;
+  flex-grow: 1;
+  max-width: 300px;
+}
+.app .home .todo .input input {
+  width: 100%;
+  padding: 1.2em;
+  outline: none;
+  border: none;
+  background: var(--body-grey);
+  border-radius: 0.2em;
+}
+.app .home .todo .input span {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+.app .home .todo .input span i {
+  font-size: 1.5em;
+}
+.app .home .todo .button {
+  width: 10%;
+  min-width: 100px;
+  background: var(--body-grey);
+  border-radius: 0.2em;
+}
+.app .home .todo .button button {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: var(--body-grey);
+  white-space: nowrap;
+  border-radius: 0.2em;
+  padding: 1.2em;
+}
+
+
+
+.app .home .todo dialog {
+  width: 50%;
+  max-width: 400px;
+  aspect-ratio: 1.5;
+  padding: 1.5em;
+  margin: auto;
+  border: none;
+  border-radius: 0.2em;
+
+}
+.app .home .todo dialog .popup{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  position: relative;
+  /* align-items: center; */
+
+}
+
+.app .home .todo dialog .popup span {
+  position: absolute;
+  cursor: pointer;
+  font-size: 1.5em;
+  right: 0;
+  top: 0;
+}
+
+.app .home .todo dialog .popup h2 {
+  text-align: center;
+  margin-top: 1em;
+}
+.app .home .todo dialog .popup .input {
+  width: 100%;
+  margin-top: 1em;
+  border-radius: 0.2em;
+}
+.app .home .todo dialog .popup .input input {
+  width: 100%;
+  padding: 1.2em;
+  border-radius: 0.2em;
+}
+.app .home .todo dialog .popup .button {
+  width: 40%;
+  margin-top: 0.5em;
+  border-radius: 0.2em;
+}
+.app .home .todo dialog .popup .button button {
+  width: 100%;
+  padding: 1.2em;
+  border-radius: 0.2em;
+}
+
+.app .home .todo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* align-items: baseline; */
+  gap: 1em;
+}
+
+.app .home .todo-wrapper .todo-cont {
+  background: var(--body-grey);
+  margin: 1em;
+  width: 20%;
+  min-width: 200px;
+  border-radius: 0.2em;
+  flex-grow: 1;
+  max-width: 500px;
+}
+.app .home .todo-wrapper .todo-cont p {
+  text-align: left;
+  position: relative;
+  top: 1em;
+  padding-left: 1em;
+}
+
+.app .home .todo-wrapper .todo-cont .todo-list {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  gap: 1em;
+  padding: 1em;
+  background: white;
+  border-radius: 0.2em;
+  margin-top: 2;
+  /* flex-grow: 1; */
+}
+
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item .serial-delete-cont {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0.5em; */
+}
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item .serial-delete-cont span{
+ 
+}
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item .serial-delete-cont button {
+  outline: none;
+  border: none;
+  background: none;
+  color: red;
+
+}
+
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item div {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item .prev-next-btn-cont {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  /* padding: 0.5em; */
 }
 
-.App-link {
-  color: #61dafb;
-}
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item .prev-next-btn-cont button {
+ outline: none;
+ background: none;
+ /* padding: 0.5em; */
+ border-radius: 50%;
+ border: 0.2px solid var(--body-grey);
+ width: 2em;
+ aspect-ratio: 1;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.app .home .todo-wrapper .todo-cont .todo-list .todo-item .prev-next-btn-cont button i {
+  font-size: 1.5em;
 }
