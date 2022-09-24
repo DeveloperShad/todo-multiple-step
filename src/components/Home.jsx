@@ -30,12 +30,10 @@ export const Home = () => {
         console.log(e.target.value)
         const searchedTodo = todo.filter(item => item.title.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()))
         setFilteredTodo(searchedTodo)
-        // setSearchKeyword({...searchKeyword, title: e.target.value})
     }
     const handleAddTodo = () => {
         const obj = { ...todoInput, id: uuid(), serialNo: getSerialNo(todo) }
         setTodoInput(obj)
-
         setTodo([...todo, obj])
         setFilteredTodo([...todo, obj])
         setTodoInput(initTodo)
